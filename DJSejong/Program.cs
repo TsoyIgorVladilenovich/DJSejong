@@ -101,89 +101,111 @@ namespace TelegramBotExperiments
                     default: break;
                 }
 
-                switch (message.Text[..2])
+                if (message.Text[..2] == "📘") 
                 {
-                    case "📘":
-                        {
-                            switch (message.Text)
+                    switch (message.Text)
+                    {
+                        case "📘2A 01 직업":
                             {
-                                case "📘2A 01 직업":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 02":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 19);
-                                        break;
-                                    }
-                                case "📘2A 03":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 04":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 05":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 06":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 07":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 08":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 09":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 10":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 11":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 12":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 13":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                case "📘2A 14":
-                                    {
-                                        await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
-                                        break;
-                                    }
-                                default: break;
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2001.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2002.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2003.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2004.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2005.mp3?raw=true");
+                                break;
                             }
+                        case "📘2A 02":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
 
-                            break;
-                        }
-                    default: break;
+                                break;
+                            }
+                        case "📘2A 03":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 04":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 05":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 06":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 07":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 08":
+                            {
+
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 09":
+                            {
+                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                break;
+                            }
+                        case "📘2A 10":
+                            {
+                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                break;
+                            }
+                        case "📘2A 11":
+                            {
+                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                break;
+                            }
+                        case "📘2A 12":
+                            {
+                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                break;
+                            }
+                        case "📘2A 13":
+                            {
+                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                break;
+                            }
+                        case "📘2A 14":
+                            {
+                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                break;
+                            }
+                        default: break;
+                    }
                 }
+                else
+                {
+                    Console.WriteLine(message.Text);
+                    Console.WriteLine("failed");
+                }
+
+
+
 
             }
         }
