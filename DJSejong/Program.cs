@@ -23,8 +23,7 @@ namespace TelegramBotExperiments
 
                 ReplyKeyboardMarkup WelcomeKeyboard = new[]//TODO: REFACTOR
                 {
-                        new[] { "1-A", "1-B" },
-                        new[] { "2-A", "2-B" },
+                        new[] { "초급 2-A", "중급 1-B" }
                 };
 
                 ReplyKeyboardMarkup OneAKeyboard = new[]
@@ -38,10 +37,10 @@ namespace TelegramBotExperiments
 
                 ReplyKeyboardMarkup OneBKeyboard = new[]
                 {
-                        new[] { "1", "2", "3" },
-                        new[] { "4", "5", "6" },
-                        new[] { "7", "8", "9" },
-                        new[] { "10", "11", "12" },
+                        new[] { "📕1B 1", "📕1B 2", "📕1B 3" },
+                        new[] { "📕1B 4", "📕1B 5", "📕1B 6" },
+                        new[] { "📕1B 7", "📕1B 8", "📕1B 9" },
+                        new[] { "📕1B 10", "📕1B 11", "📕1B 12" },
                         new[] { "Back To Main Menu"},
                 };
 
@@ -78,12 +77,12 @@ namespace TelegramBotExperiments
                             await bot.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: OneAKeyboard);
                             break;
                         }
-                    case "1-B":
+                    case "중급 1-B":
                         {
                             await bot.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: OneBKeyboard);
                             break;
                         }
-                    case "2-A":
+                    case "초급 2-A":
                         {
                             await bot.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: TwoAKeyboard);
                             break;
@@ -114,7 +113,7 @@ namespace TelegramBotExperiments
                                 await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2005.mp3?raw=true");
                                 break;
                             }
-                        case "📘2A 02":
+                        case "📘2A 02 좋아하는 것":
                             {
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
@@ -122,42 +121,42 @@ namespace TelegramBotExperiments
 
                                 break;
                             }
-                        case "📘2A 03":
+                        case "📘2A 03 축하":
                             {
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 04":
+                        case "📘2A 04 할일":
                             {
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 05":
+                        case "📘2A 05 휴가 계획":
                             {
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 06":
+                        case "📘2A 06 쇼핑":
                             {
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 07":
+                        case "📘2A 07 여행과":
                             {
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 08":
+                        case "📘2A 08 공공 예절":
                             {
 
                                 await bot.SendAudioAsync(message.Chat.Id, "");
@@ -165,44 +164,159 @@ namespace TelegramBotExperiments
                                 await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 09":
+                        case "📘2A 09 생할 습관":
                             {
-                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 10":
+                        case "📘2A 10 물건 찾기":
                             {
-                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 11":
+                        case "📘2A 11 날씨":
                             {
-                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 12":
+                        case "📘2A 12 부탁":
                             {
-                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 13":
+                        case "📘2A 13 살고 싶은 집":
                             {
-                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
-                        case "📘2A 14":
+                        case "📘2A 14 꿈":
                             {
-                                await bot.ForwardMessageAsync(message.Chat.Id, "-1756022225", 9);
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
                                 break;
                             }
                         default: break;
                     }
                 }
-                else
+                else if (message.Text[..2] == "📕")
                 {
-                    Console.WriteLine(message.Text);
-                    Console.WriteLine("failed");
-                }
+                    switch (message.Text)
+                    {
+                        case "📘2A 01 직업":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2001.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2002.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2003.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2004.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2005.mp3?raw=true");
+                                break;
+                            }
+                        case "📘2A 02 좋아하는 것":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2006.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2007.mp3?raw=true");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+
+                                break;
+                            }
+                        case "📘2A 03 축하":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 04 할일":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 05 휴가 계획":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 06 쇼핑":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 07 여행과":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 08 공공 예절":
+                            {
+
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 09 생할 습관":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 10 물건 찾기":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 11 날씨":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 12 부탁":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 13 살고 싶은 집":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        case "📘2A 14 꿈":
+                            {
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                await bot.SendAudioAsync(message.Chat.Id, "");
+                                break;
+                            }
+                        default: break;
+                    }
 
 
 
