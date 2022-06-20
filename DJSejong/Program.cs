@@ -12,7 +12,8 @@ namespace TelegramBotExperiments
 
     class Program
     {
-        static ITelegramBotClient bot = new TelegramBotClient("5188626170:AAGh7ej4pY6HEKaPlX1_j9P4ue6tNpA3Vys");
+        //static ITelegramBotClient bot = new TelegramBotClient("5188626170:AAGh7ej4pY6HEKaPlX1_j9P4ue6tNpA3Vys");
+        static ITelegramBotClient bot = new TelegramBotClient("5526877072:AAHQ53LfGEDxMV70oN9bmyUJ-2fqtPtqiK8");//stringCat for testing
         public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
             // Некоторые действия
@@ -101,276 +102,288 @@ namespace TelegramBotExperiments
                     default: break;
                 }
 
-                if (message.Text[..2] == "📘")//TODO: Rework with link generation
-                {
-                    switch (message.Text)
-                    {
-                        case "📘2A 01 직업":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2001.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2002.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2003.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2004.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2005.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 02 좋아하는 것":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2006.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2007.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2008.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2009.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2010.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 03 축하":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2011.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2012.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2013.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2014.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2015.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 04 할일":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2016.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2017.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2018.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2019.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2020.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 05 휴가 계획":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2021.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2022.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2023.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2024.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2025.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 06 쇼핑":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2026.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2027.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2028.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2029.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2030.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 07 여행과":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2031.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2032.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2033.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2034.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2035.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 08 공공 예절":
-                            {
 
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2036.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2037.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2038.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2039.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2040.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 09 생할 습관":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2041.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2042.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2043.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2044.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2045.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 10 물건 찾기":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2046.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2047.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2048.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2049.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2050.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 11 날씨":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2051.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2052.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2053.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2054.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2055.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 12 부탁":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2056.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2057.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2058.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2059.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2060.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 13 살고 싶은 집":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2061.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2062.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2063.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2064.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2065.mp3?raw=true");
-                                break;
-                            }
-                        case "📘2A 14 꿈":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2066.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2067.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2068.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2069.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2070.mp3?raw=true");
-                                break;
-                            }
-                        default: break;
-                    }
+                if (message.Text[..2] == "📘")
+                {
+                    await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%20" + message.Text.Substring(5, 2) + ".mp3?raw=true");
                 }
-                else if (message.Text[..2] == "📕")//TODO: Rework with link generation
+                else if (message.Text[..2] == "📕")
                 {
-                    switch (message.Text)
-                    {
-                        case "📕1B 1": //TODO: Rework with link generation
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2001.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2002.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2003.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2004.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2005.mp3?raw=true");
+                    await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%20" + message.Text.Substring(5, 2) + ".mp3?raw=true");
+                }
+                
+                {
+                    /*if (message.Text[..2] == "📘")//TODO: Rework with link generation
+                   {
+                       switch (message.Text)
+                       {
+                           case "📘2A 01 직업":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2001.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2002.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2003.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2004.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2005.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 02 좋아하는 것":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2006.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2007.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2008.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2009.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2010.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 03 축하":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2011.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2012.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2013.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2014.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2015.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 04 할일":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2016.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%D0%89%D0%89%D0%85%D0%8A%C2%AB%E2%80%94%C2%B1%D1%94%D0%8A%D0%BE%203%20TRACK%2017.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2018.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2019.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2020.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 05 휴가 계획":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2021.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2022.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2023.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2024.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2025.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 06 쇼핑":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2026.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2027.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2028.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2029.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2030.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 07 여행과":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2031.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2032.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2033.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2034.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2035.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 08 공공 예절":
+                               {
 
-                                break;
-                            }
-                        case "📕1B 2":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2006.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2007.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2008.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2009.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2010.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2036.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2037.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2038.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2039.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2040.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 09 생할 습관":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2041.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2042.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2043.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2044.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2045.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 10 물건 찾기":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2046.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2047.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2048.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2049.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2050.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 11 날씨":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2051.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2052.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2053.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2054.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2055.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 12 부탁":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2056.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2057.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2058.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2059.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2060.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 13 살고 싶은 집":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2061.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2062.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2063.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2064.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2065.mp3?raw=true");
+                                   break;
+                               }
+                           case "📘2A 14 꿈":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2066.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2067.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2068.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2069.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2070.mp3?raw=true");
+                                   break;
+                               }
+                           default: break;
+                       }
+                   }
+                   else if (message.Text[..2] == "📕")//TODO: Rework with link generation
+                   {
+                       switch (message.Text)
+                       {
+                           case "📕1B 1": //TODO: Rework with link generation
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2001.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2002.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2003.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2004.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2005.mp3?raw=true");
 
-                                break;
-                            }
-                        case "📕1B 3":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2011.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2012.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2013.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2014.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2015.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 2":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2006.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2007.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2008.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2009.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2010.mp3?raw=true");
 
-                                break;
-                            }
-                        case "📕1B 4":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2016.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2017.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2018.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2019.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2020.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 5":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2021.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2022.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2023.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2024.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2025.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 6":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2026.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2027.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2028.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2029.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2030.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 7":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2031.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2032.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2033.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2034.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2035.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 8":
-                            {
+                                   break;
+                               }
+                           case "📕1B 3":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2011.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2012.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2013.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2014.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2015.mp3?raw=true");
 
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2036.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2037.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2038.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2039.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2040.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 9":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2041.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2042.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2043.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2044.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2045.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 10":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2046.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2047.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2048.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2049.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2050.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 11":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2051.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2052.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2053.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2054.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2055.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 12":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2056.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2057.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2058.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2059.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2060.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 13":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2061.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2062.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2063.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2064.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2065.mp3?raw=true");
-                                break;
-                            }
-                        case "📕1B 14":
-                            {
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2066.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2067.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2068.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2069.mp3?raw=true");
-                                await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2070.mp3?raw=true");
-                                break;
-                            }
-                        default: break;
-                    }
+                                   break;
+                               }
+                           case "📕1B 4":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2016.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2017.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2018.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2019.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2020.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 5":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2021.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2022.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2023.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2024.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2025.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 6":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2026.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2027.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2028.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2029.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2030.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 7":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2031.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2032.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2033.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2034.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2035.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 8":
+                               {
+
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2036.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2037.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2038.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2039.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2040.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 9":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2041.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2042.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2043.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2044.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2045.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 10":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2046.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2047.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2048.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2049.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2050.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 11":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2051.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2052.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2053.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2054.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2055.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 12":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2056.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2057.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2058.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2059.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2060.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 13":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2061.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2062.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2063.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2064.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2065.mp3?raw=true");
+                                   break;
+                               }
+                           case "📕1B 14":
+                               {
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2066.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2067.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2068.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2069.mp3?raw=true");
+                                   await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%2070.mp3?raw=true");
+                                   break;
+                               }
+                           default: break;
+                       }
+                   }*/
                 }
 
             }
