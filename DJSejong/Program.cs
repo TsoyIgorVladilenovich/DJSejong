@@ -103,13 +103,24 @@ namespace TelegramBotExperiments
                 }
 
 
-                if (message.Text[..2] == "📘")
+                if (message.Text[..2] == "📘")//중급 1-B
                 {
-                    await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%20" + message.Text.Substring(5, 2) + ".mp3?raw=true");
+                    //for (int i = 0; i<5; i++ )
+                    //{ 
+
+                    //}
+                    Console.WriteLine(message.Text.Substring(5, 2).Trim());
+
+                    var address = "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/stringCat/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%20" + message.Text.Substring(5, 2).Trim() + ".mp3?raw=true";
+
+                    Console.WriteLine(address);
+                    //var address = "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2001.mp3?raw=true";
+
+                    await bot.SendAudioAsync(message.Chat.Id, address);
                 }
                 else if (message.Text[..2] == "📕")
                 {
-                    await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%20" + message.Text.Substring(5, 2) + ".mp3?raw=true");
+                    await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/stringCat/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%20" + message.Text.Substring(5, 2) + ".mp3?raw=true");
                 }
                 
                 {
