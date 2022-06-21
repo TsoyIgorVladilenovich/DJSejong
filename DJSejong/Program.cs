@@ -103,22 +103,27 @@ namespace TelegramBotExperiments
                 }
 
 
-                if (message.Text[..2] == "📘")//중급 1-B
+
+
+                if (message.Text?[..2] == "📘")//중급 1-B
                 {
-                    //for (int i = 0; i<5; i++ )
-                    //{ 
-
-                    //}
+                    int num = Convert.ToInt32(message.Text.Substring(5, 2).Trim());
+                    for (int i = (num * 5) -4; i<=num*5; i++ )//SHITTY CODE REWORK
+                    {
+                        Console.WriteLine("i = " + i);
+                        var address = "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/stringCat/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%20" + i + ".mp3?raw=true";
+                        await bot.SendAudioAsync(
+                            chatId: message.Chat.Id, 
+                            audio: address,
+                            title: "TRACK "+i,
+                            performer: "DJ Sejong",
+                            //caption: message.Text,
+                            replyToMessageId: message.MessageId);
+                        Console.WriteLine(address);
+                    }
                     Console.WriteLine(message.Text.Substring(5, 2).Trim());
-
-                    var address = "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/stringCat/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%20" + message.Text.Substring(5, 2).Trim() + ".mp3?raw=true";
-
-                    Console.WriteLine(address);
-                    //var address = "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/--%2B-%C2%A6T-%C2%A6-%D1%8E%203%20TRACK%2001.mp3?raw=true";
-
-                    await bot.SendAudioAsync(message.Chat.Id, address);
                 }
-                else if (message.Text[..2] == "📕")
+                else if (message.Text?[..2] == "📕")
                 {
                     await bot.SendAudioAsync(message.Chat.Id, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/stringCat/DJSejong/Audio/%EC%B6%A9%EA%B8%89%201B/--%2B-%C2%A6T-%C2%A6-%D1%8E%206%20TRACK%20" + message.Text.Substring(5, 2) + ".mp3?raw=true");
                 }
