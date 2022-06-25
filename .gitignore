@@ -232,3 +232,19 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+DJSejong/bin/Debug/netcoreapp3.1/DJSejong.dll
+DJSejong/bin/Debug/netcoreapp3.1/DJSejong.pdb
+DJSejong/bin/Debug/netcoreapp3.1/DJSejong.runtimeconfig.dev.json
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.assets.cache
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.csproj.AssemblyReference.cache
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.csproj.CoreCompileInputs.cache
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.csproj.FileListAbsolute.txt
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.dll
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.GeneratedMSBuildEditorConfig.editorconfig
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.genruntimeconfig.cache
+DJSejong/obj/Debug/netcoreapp3.1/DJSejong.pdb
+DJSejong/obj/DJSejong.csproj.nuget.dgspec.json
+DJSejong/obj/DJSejong.csproj.nuget.g.props
+DJSejong/obj/DJSejong.csproj.nuget.g.targets
+DJSejong/obj/project.assets.json
+DJSejong/obj/project.nuget.cache
