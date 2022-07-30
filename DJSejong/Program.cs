@@ -114,6 +114,7 @@ namespace TelegramBotExperiments
                 }
              },
             //TODO: Rework this array
+            // 🖊🖋 ✒️ 🖌🖍📝✏️🔏
             {11, new[]//세종한국어 1
                 {
                     new[] { "1️⃣00 Introduction. Hangeul"},
@@ -138,11 +139,11 @@ namespace TelegramBotExperiments
 
             {33, new[]//세종한국어 3
                 {
-                    new[] { "3️⃣01 직업", "3️⃣02 좋아하는 것", "3️⃣03 축하" },
-                    new[] { "3️⃣04 할일", "3️⃣05 휴가 계획", "3️⃣06 쇼핑" },
-                    new[] { "3️⃣07 여행과", "3️⃣08 공공 예절", "3️⃣09 생할 습관" },
-                    new[] { "3️⃣10 물건 찾기", "3️⃣11 날씨", "3️⃣12 부탁" },
-                    new[] { "3️⃣13 살고 싶은 집", "3️⃣14 꿈" },
+                    new[] { "✒️01 직업", "✒️02 좋아하는 것", "✒️03 축하" },
+                    new[] { "✒️04 할일", "✒️05 휴가 계획", "✒️06 쇼핑" },
+                    new[] { "✒️07 여행과", "✒️08 공공 예절", "✒️09 생할 습관" },
+                    new[] { "✒️10 물건 찾기", "✒️11 날씨", "✒️12 부탁" },
+                    new[] { "✒️13 살고 싶은 집", "✒️14 꿈" },
                     new[] { "⬅️Back To Main Menu"}
                 }
              },
@@ -261,12 +262,99 @@ namespace TelegramBotExperiments
 
         };
 
-        static readonly Dictionary<string, string[]> keyboardWBDictionary = new Dictionary<string, string[]>()
+        static readonly Dictionary<int, int[]> keyboardWBDictionary = new Dictionary<int, int[]>()//TODO: FIX Rework//TEMPORARY
         {
             {
-                "1", new[]{"2", "3"}
-            }
+                1, new[]{1, 4}
+            },
 
+            {
+                2, new[]{5, 8}
+            },
+
+            {
+                3, new[]{9, 12}
+            },
+
+            {
+                4, new[]{13, 15}
+            },
+
+            {
+                5, new[]{16, 19}
+            },
+
+            {
+                6, new[]{20, 23}
+            },
+
+            {
+                7, new[]{24, 27}
+            },
+
+            {
+                8, new[]{28, 31}
+            },
+
+            {
+                9, new[]{32, 35}
+            },
+
+            {
+                10, new[]{36, 39}
+            },
+
+            {
+                11, new[]{40, 43}
+            },
+
+            {
+                12, new[]{44, 47}
+            },
+
+            {
+                13, new[]{48, 51}
+
+            },
+
+            {
+                14, new[]{52, 55}
+            },
+        };
+
+        static readonly Dictionary<int, string> linksictionary = new Dictionary<int, string>()//TODO: FIX Rework//TEMPORARY
+        {
+            {
+                1, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20("
+            },
+
+            {
+                2, ""
+            },
+
+            {
+                3, ""
+            },
+
+            {
+                4, ""
+            },
+
+            {
+                5, ""
+            },
+
+            {
+                6, ""
+            },
+
+            {
+                7, ""
+            },
+
+            {
+                8, ""
+            }
         };
 
         public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
@@ -323,13 +411,13 @@ namespace TelegramBotExperiments
 
                         await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%202/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
-                    else if (firstTwo == "📘" || firstTwo == "3️⃣")//세종한국어 3
+                    else if (firstTwo == "📘" || firstTwo == "✒️")//세종한국어 3
                     {
-                        if (message.Text.Substring(3, 2).Trim() == "St" )
+                        if (message.Text.Substring(2, 2).Trim() == "St" )
                         {
                             await SendKeyboard(message, keyboardDictionary[30]);
                         }
-                        else if (message.Text.Substring(3, 2).Trim() == "Wo")
+                        else if (message.Text.Substring(2, 2).Trim() == "Wo")
                         {
                             await SendKeyboard(message, keyboardDictionary[33]);
                         }
@@ -337,7 +425,22 @@ namespace TelegramBotExperiments
                         {
                             int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                            await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                            switch (firstTwo)
+                            {
+                                case "📘":
+
+                                    await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                                    break;
+
+                                case "✒️":
+
+                                    await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/WORKBOOK/TRACK%20(", ").mp3?raw=true", keyboardWBDictionary[num][0], keyboardWBDictionary[num][1]);
+                                    break;
+
+                                default: break;
+                            }
+
+                            //await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                         }
                     }
                     else if (firstTwo == "📔") //세종한국어 4
@@ -378,7 +481,11 @@ namespace TelegramBotExperiments
                     }
                 }
             }
-            catch { }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
         }
 
         public static async Task SendKeyboard(Telegram.Bot.Types.Message message, ReplyKeyboardMarkup keyboardMarkup)
@@ -386,8 +493,9 @@ namespace TelegramBotExperiments
             await bot.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: keyboardMarkup);
         }
 
-            public static async Task SendAudio(Telegram.Bot.Types.Message message, string address, string format, int startIndex, int finalIndex)
+        public static async Task SendAudio(Telegram.Bot.Types.Message message, string address, string format, int startIndex, int finalIndex)
         {
+            Console.WriteLine("i = " + startIndex);
             for (int i = startIndex; i <= finalIndex; i++)//SHITTY CODE REWORK
             {
                 Console.WriteLine("i = " + i);
