@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
+    <AssemblyName>DJSejong</AssemblyName>
+    <RootNamespace>DJSejong</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,5 +17,8 @@
     <PackageReference Include="Telegram.Bot" Version="19.0.0" />
     <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="1.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DJSejongModels\DJSejong.Models.csproj" />
   </ItemGroup>
 </Project>
