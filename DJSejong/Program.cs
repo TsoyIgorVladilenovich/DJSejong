@@ -6,13 +6,12 @@ using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace TelegramBotExperiments
 {
     class Program
     {
-        static ITelegramBotClient bot = new TelegramBotClient("7024627368:AAF3gdw4xfnMmks9cpa9vEMfW-csCkB6fyA");
-
         static readonly Dictionary<int, ReplyKeyboardMarkup> keyboardDictionary = new Dictionary<int, ReplyKeyboardMarkup>()
         {
             {0, new[]//Welcome Keyboard
@@ -320,41 +319,6 @@ namespace TelegramBotExperiments
             },
         };
 
-        static readonly Dictionary<int, string> linksictionary = new Dictionary<int, string>()//TODO: FIX Rework//TEMPORARY
-        {
-            {
-                1, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20("
-            },
-
-            {
-                2, ""
-            },
-
-            {
-                3, ""
-            },
-
-            {
-                4, ""
-            },
-
-            {
-                5, ""
-            },
-
-            {
-                6, ""
-            },
-
-            {
-                7, ""
-            },
-
-            {
-                8, ""
-            }
-        };
-
         public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
             // Некоторые действия
@@ -369,13 +333,13 @@ namespace TelegramBotExperiments
                     {
                         case "/start":
                             {                                
-                                await bot.SendTextMessageAsync(message.Chat.Id, "Welcome To DJ Sejong BOT!\nPlease choose your level...", replyMarkup: keyboardDictionary[0]);
+                                await botClient.SendTextMessageAsync(message.Chat.Id, "Welcome To DJ Sejong BOT!\nPlease choose your level...", replyMarkup: keyboardDictionary[0]);
                                 
                                 break;
                             } 
                         case "⬅️Back To Main Menu":
                             {
-                                await bot.SendTextMessageAsync(message.Chat.Id, "Please choose your level...", replyMarkup: keyboardDictionary[0]);
+                                await botClient.SendTextMessageAsync(message.Chat.Id, "Please choose your level...", replyMarkup: keyboardDictionary[0]);
                                 
                                 break;
                             }
@@ -392,32 +356,32 @@ namespace TelegramBotExperiments
 
                         if (num == 0)
                         {
-                            await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20(", ").mp3?raw=true", 1, 19);
+                            await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20(", ").mp3?raw=true", 1, 19);
                         }
                         else if (num > 0 && num < 11)
                         {                            
-                            await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20(", ").mp3?raw=true", 20 + 5 * (num - 1), (20 + 5 * (num - 1)) + 4);
+                            await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20(", ").mp3?raw=true", 20 + 5 * (num - 1), (20 + 5 * (num - 1)) + 4);
                         }
                         else
                         {
-                            await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20(", ").mp3?raw=true", 70 + 2 * (num - 10) - 2, 70 + 2 * (num - 10) - 1);
+                            await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%201/TRACK%20(", ").mp3?raw=true", 70 + 2 * (num - 10) - 2, 70 + 2 * (num - 10) - 1);
                         }
                     }
                     else if (firstTwo == "📙")//세종한국어 2
                     {
                         int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                        await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%202/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                        await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%202/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
                     else if (firstTwo == "📘" || firstTwo == "✒️")//세종한국어 3
                     {
                         if (message.Text.Substring(2, 2).Trim() == "St" )
                         {
-                            await SendKeyboard(message, keyboardDictionary[30]);
+                            await SendKeyboard(botClient, message, keyboardDictionary[30]);
                         }
                         else if (message.Text.Substring(2, 2).Trim() == "Wo")
                         {
-                            await SendKeyboard(message, keyboardDictionary[33]);
+                            await SendKeyboard(botClient, message, keyboardDictionary[33]);
                         }
                         else
                         {
@@ -427,55 +391,53 @@ namespace TelegramBotExperiments
                             {
                                 case "📘":
 
-                                    await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                                    await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                                     break;
 
                                 case "✒️":
 
-                                    await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/WORKBOOK/TRACK%20(", ").mp3?raw=true", keyboardWBDictionary[num][0], keyboardWBDictionary[num][1]);
+                                    await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/WORKBOOK/TRACK%20(", ").mp3?raw=true", keyboardWBDictionary[num][0], keyboardWBDictionary[num][1]);
                                     break;
 
                                 default: break;
                             }
-
-                            //await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%203/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                         }
                     }
                     else if (firstTwo == "📔") //세종한국어 4
                     {
                         int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                        await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%204/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                        await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%204/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
                     else if (firstTwo == "📓") //세종한국어 5
                     {
                         int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                        await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%205/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                        await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%205/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
                     else if (firstTwo == "📕") //세종한국어 6
                     {
                         int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                        await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%206/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                        await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%206/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
                     else if (firstTwo == "📒") //세종한국어 7
                     {
                         int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                        await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%207/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                        await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%207/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
                     else if (firstTwo == "📖") //세종한국어 8
                     {
                         int num = Convert.ToInt32(message.Text.Substring(2, 2).Trim());
 
-                        await SendAudio(message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%208/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
+                        await SendAudio(botClient, message, "https://github.com/TsoyIgorVladilenovich/DJSejong/blob/master/DJSejong/Audio/%EC%84%B8%EC%A2%85%ED%95%9C%EA%B5%AD%EC%96%B4%208/TRACK%20(", ").mp3?raw=true", (num * 5) - 4, num * 5);
                     }
                     else if (firstTwo == "세종")
                     {
                         int numberOfKeyboard = Convert.ToInt32(message.Text.Substring(6,1));
 
-                        await SendKeyboard(message, keyboardDictionary[numberOfKeyboard]);
+                        await SendKeyboard(botClient, message, keyboardDictionary[numberOfKeyboard]);
                     }
                 }
             }
@@ -486,19 +448,17 @@ namespace TelegramBotExperiments
             }
         }
 
-        public static async Task SendKeyboard(Message message, ReplyKeyboardMarkup keyboardMarkup)
+        public static async Task SendKeyboard(ITelegramBotClient botClient, Message message, ReplyKeyboardMarkup keyboardMarkup)
         {
-            await bot.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: keyboardMarkup);
+            await botClient.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: keyboardMarkup);
         }
 
-        public static async Task SendAudio(Message message, string address, string format, int startIndex, int finalIndex)
+        public static async Task SendAudio(ITelegramBotClient botClient, Message message, string address, string format, int startIndex, int finalIndex)
         {
             Console.WriteLine("i = " + startIndex);
             for (int i = startIndex; i <= finalIndex; i++)//SHITTY CODE REWORK
-            {
-                Console.WriteLine("i = " + i);
-
-                await bot.SendAudioAsync(
+            {                
+                await botClient.SendAudioAsync(
                     chatId: message.Chat.Id,
                     audio: InputFile.FromString(address + i + format) ,
                     replyToMessageId: message.MessageId);
@@ -514,20 +474,26 @@ namespace TelegramBotExperiments
 
         static void Main(string[] args)
         {
+            string botToken = ConfigurationManager.AppSettings["TelegramToken"];
+            ITelegramBotClient bot = new TelegramBotClient(botToken);
+
             Console.WriteLine("Запущен бот " + bot.GetMeAsync().Result.FirstName);
 
             var cts = new CancellationTokenSource();
             var cancellationToken = cts.Token;
+
             var receiverOptions = new ReceiverOptions
             {
                 AllowedUpdates = { }, // receive all update types
             };
+
             bot.StartReceiving(
                 HandleUpdateAsync,
                 HandleErrorAsync,
                 receiverOptions,
                 cancellationToken
             );
+
             Console.ReadLine();
         }
     }
