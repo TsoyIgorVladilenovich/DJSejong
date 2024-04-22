@@ -4,16 +4,14 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot.Types;
-using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.ReplyMarkups;
 using System.Collections.Generic;
 
 namespace TelegramBotExperiments
 {
-
     class Program
     {
-        static ITelegramBotClient bot = new TelegramBotClient("5188626170:AAGh7ej4pY6HEKaPlX1_j9P4ue6tNpA3Vys");
+        static ITelegramBotClient bot = new TelegramBotClient("7024627368:AAF3gdw4xfnMmks9cpa9vEMfW-csCkB6fyA");
 
         static readonly Dictionary<int, ReplyKeyboardMarkup> keyboardDictionary = new Dictionary<int, ReplyKeyboardMarkup>()
         {
@@ -488,12 +486,12 @@ namespace TelegramBotExperiments
             }
         }
 
-        public static async Task SendKeyboard(Telegram.Bot.Types.Message message, ReplyKeyboardMarkup keyboardMarkup)
+        public static async Task SendKeyboard(Message message, ReplyKeyboardMarkup keyboardMarkup)
         {
             await bot.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: keyboardMarkup);
         }
 
-        public static async Task SendAudio(Telegram.Bot.Types.Message message, string address, string format, int startIndex, int finalIndex)
+        public static async Task SendAudio(Message message, string address, string format, int startIndex, int finalIndex)
         {
             Console.WriteLine("i = " + startIndex);
             for (int i = startIndex; i <= finalIndex; i++)//SHITTY CODE REWORK
@@ -502,7 +500,7 @@ namespace TelegramBotExperiments
 
                 await bot.SendAudioAsync(
                     chatId: message.Chat.Id,
-                    audio: address + i + format,
+                    audio: InputFile.FromString(address + i + format) ,
                     replyToMessageId: message.MessageId);
 
                 Console.WriteLine(address + i + format);
