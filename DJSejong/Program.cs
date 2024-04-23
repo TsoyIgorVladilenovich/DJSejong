@@ -14,7 +14,7 @@ namespace TelegramBotExperiments
             string botToken = ConfigurationManager.AppSettings["TelegramToken"];
             ITelegramBotClient bot = new TelegramBotClient(botToken);
 
-            Console.WriteLine("Запущен бот " + bot.GetMeAsync().Result.FirstName);
+            Console.WriteLine($"Запущен бот {bot.GetMeAsync().Result.FirstName}");
 
             var cts = new CancellationTokenSource();
             var cancellationToken = cts.Token;
