@@ -30,6 +30,11 @@ namespace DJSejong
             }
         }
 
+        public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+        {
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(exception));
+        }
+
         private static async Task CheckOnCommands(Message message, ITelegramBotClient botClient)
         {
             switch (message.Text)
@@ -149,11 +154,6 @@ namespace DJSejong
                 chatId: message.Chat.Id,
                 audio: InputFile.FromString(soundAddress),
                 replyToMessageId: message.MessageId);
-        }
-
-        public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
-        {
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(exception));
         }
     }
 }
