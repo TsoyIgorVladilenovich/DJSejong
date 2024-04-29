@@ -41,13 +41,15 @@ namespace DJSejong
             {
                 case "/start":
                     {
-                        await botClient.SendTextMessageAsync(message.Chat.Id, "Welcome To DJ Sejong BOT!\nPlease choose your level...", replyMarkup: KeyboardMarkups.keyboardsDictionary[(int)KeyboardNames.WelcomeKeyboard]);
+                        await botClient.SendTextMessageAsync(message.Chat.Id, "Welcome To DJ Sejong BOT!\nPlease choose your level...", 
+                            replyMarkup: KeyboardMarkups.keyboardsDictionary[(int)KeyboardNames.WelcomeKeyboard]);
 
                         break;
                     }
                 case "⬅️Back To Main Menu":
                     {
-                        await botClient.SendTextMessageAsync(message.Chat.Id, "Please choose your level...", replyMarkup: KeyboardMarkups.keyboardsDictionary[(int)KeyboardNames.WelcomeKeyboard]);
+                        await botClient.SendTextMessageAsync(message.Chat.Id, "Please choose your level...", 
+                            replyMarkup: KeyboardMarkups.keyboardsDictionary[(int)KeyboardNames.WelcomeKeyboard]);
 
                         break;
                     }
@@ -58,7 +60,7 @@ namespace DJSejong
         private static async Task CheckOnFirstTwoChars(Message message, ITelegramBotClient botClient)
         {
             var firstTwoChars = message.Text?[..2];
-            var secondTwoChars = message.Text.Substring(2, 2).Trim();
+            var secondTwoChars = message.Text?.Substring(2, 2).Trim();
 
             switch (firstTwoChars)
             {
