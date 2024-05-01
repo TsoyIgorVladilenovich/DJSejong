@@ -5,11 +5,18 @@ using System.Threading.Tasks;
 using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types;
 using Telegram.Bot;
+using DJSejong;
+using System.Collections.Generic;
+using System.IO;
+using DJSejong.Models;
+using System.Linq;
 
 namespace DJSejong
 {
     class DJSejongServiceProvider
     {
+        
+        //static bool bookIsChosen;
         public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(update));
@@ -19,9 +26,25 @@ namespace DJSejong
                 {
                     var message = update.Message;
 
+                    if (!BooksByChat.booksByID.ContainsKey(update.Message.Chat.Id.ToString()))
+                    {
+                        BooksByChat.booksByID.Add(update.Message.Chat.Id.ToString(), KeyboardNames.WelcomeKeyboard.ToString());
+                    };
+
                     await CheckOnCommands(message, botClient);
 
-                    await CheckOnFirstTwoChars(message, botClient);
+                    await CheckOnFirstTwoChars(message, botClient);                    
+                }
+                else if (update.Type == Telegram.Bot.Types.Enums.UpdateType.CallbackQuery)
+                {                        
+                    if (!BooksByChat.booksByID.ContainsKey(update.CallbackQuery.Message.Chat.Id.ToString()))
+                    {
+                        BooksByChat.booksByID.Add(update.CallbackQuery.Message.Chat.Id.ToString(), KeyboardNames.WelcomeKeyboard.ToString());
+                    };
+                    var message = update.Message;
+                    var data = update.CallbackQuery.Data;
+
+                    await CheckCallBackQuery(update, botClient);
                 }
             }
             catch (Exception e)
@@ -41,8 +64,12 @@ namespace DJSejong
             {
                 case "/start":
                     {
-                        await botClient.SendTextMessageAsync(message.Chat.Id, "Welcome To DJ Sejong BOT!\nPlease choose your level...", 
-                            replyMarkup: KeyboardMarkups.keyboardsDictionary[(int)KeyboardNames.WelcomeKeyboard]);
+                        BooksByChat.booksByID[message.Chat.Id.ToString()] = "";
+
+                        await botClient.SendTextMessageAsync(message.Chat.Id, "Welcome To DJ Sejong BOT!\nPlease choose your level...",
+                            //replyMarkup: new InlineKeyboardMarkup(keyboardRows)
+                            replyMarkup: GeneratedKeyboardMarkups.generatedKeyboardsDictionary[KeyboardNames.WelcomeKeyboard.ToString()]
+                            );
 
                         break;
                     }
@@ -145,9 +172,51 @@ namespace DJSejong
             }
         }
 
+        private static async Task CheckCallBackQuery(Update update, ITelegramBotClient botClient)
+        {
+            if (update.CallbackQuery.Data == "⬅️Back To Main Menu" || BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()] == KeyboardNames.WelcomeKeyboard.ToString())
+            {
+                //chosenBook = "";
+                BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()] = "";
+
+                await botClient.DeleteMessageAsync(update.CallbackQuery.Message.Chat.Id, update.CallbackQuery.Message.MessageId);
+
+                await botClient.SendTextMessageAsync(update.CallbackQuery.Message.Chat.Id, "Please choose your level...",
+                    replyMarkup: GeneratedKeyboardMarkups.generatedKeyboardsDictionary[KeyboardNames.WelcomeKeyboard.ToString()]
+                            );
+            }
+            else if (BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()] == "")
+            {
+                BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()] = update.CallbackQuery.Data;
+
+                await botClient.DeleteMessageAsync(update.CallbackQuery.Message.Chat.Id, update.CallbackQuery.Message.MessageId);
+
+                await SendInlineKeyboard(botClient, update, GeneratedKeyboardMarkups.generatedKeyboardsDictionary[BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()]]);
+            }
+            else
+            {
+                var chosenChapter = update.CallbackQuery.Data;
+
+                await botClient.DeleteMessageAsync(update.CallbackQuery.Message.Chat.Id, update.CallbackQuery.Message.MessageId);
+
+                await botClient.SendTextMessageAsync(update.CallbackQuery.Message.Chat.Id, $"Book Name: {BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()]}\nChapter Name: {chosenChapter}");
+
+                for (int i = 0; i < HierarchicalItem.filesByChaptersByBooks[BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()]][chosenChapter].Count; i++)
+                    await SendAudioFS(botClient, update, HierarchicalItem.filesByChaptersByBooks[BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()]][chosenChapter][i]);
+
+                await SendInlineKeyboard(botClient, update, GeneratedKeyboardMarkups.generatedKeyboardsDictionary[BooksByChat.booksByID[update.CallbackQuery.Message.Chat.Id.ToString()]]);
+            }
+
+        }
+
         private static async Task SendKeyboard(ITelegramBotClient botClient, Message message, ReplyKeyboardMarkup keyboardMarkup)
         {
             await botClient.SendTextMessageAsync(message.Chat.Id, "Choose Required Topic ", replyMarkup: keyboardMarkup);
+        }
+
+        private static async Task SendInlineKeyboard(ITelegramBotClient botClient, Update update, InlineKeyboardMarkup keyboardMarkup)
+        {
+            await botClient.SendTextMessageAsync(update.CallbackQuery.Message.Chat.Id, "Choose Required Topic ", replyMarkup: keyboardMarkup);
         }
 
         private static async Task SendAudioSR(ITelegramBotClient botClient, Message message, string soundAddress)
@@ -156,6 +225,16 @@ namespace DJSejong
                 chatId: message.Chat.Id,
                 audio: InputFile.FromString(soundAddress),
                 replyToMessageId: message.MessageId);
+        }
+
+        private static async Task SendAudioFS(ITelegramBotClient botClient, Update update, string soundAddress)
+        {
+            var file = System.IO.File.Open(soundAddress, FileMode.Open);
+            await botClient.SendAudioAsync(
+                chatId: update.CallbackQuery.Message.Chat.Id,
+                audio: InputFile.FromStream(file, Path.GetFileName(soundAddress))
+                );
+            file.Close();
         }
     }
 }
