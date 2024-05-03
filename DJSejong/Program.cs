@@ -81,6 +81,10 @@ namespace TelegramBotExperiments
                             HierarchicalItem.chaptersByBooks.Add(directoryName, new List<string>());
                             TraverseFolders(entry); // Recursively traverse into subdirectories
                         }
+                        else if (Path.GetFileName(Path.GetDirectoryName(Path.GetFullPath(entry))) == "AudioFiles")
+                        {
+                            continue;
+                        }    
                         else
                         {
                             var parentFolderName = Path.GetFileName(Path.GetDirectoryName(Path.GetFullPath(entry)));
@@ -120,17 +124,19 @@ namespace TelegramBotExperiments
         {
             List<List<InlineKeyboardButton>> keyboardRows = new List<List<InlineKeyboardButton>>();
 
-            var ceiling = Math.Ceiling(HierarchicalItem.bookList.Count / (decimal)3);
+            int keysPerLine = 2;
+
+            var ceiling = Math.Ceiling(HierarchicalItem.bookList.Count / (decimal)keysPerLine);
 
             for (int i = 0; i < ceiling; i++)
             {
                 List<InlineKeyboardButton> row = new List<InlineKeyboardButton>();
 
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < keysPerLine; j++)
                 {
-                    if ((j + i * 3) < HierarchicalItem.bookList.Count)
+                    if ((j + i * keysPerLine) < HierarchicalItem.bookList.Count)
                     {
-                        row.Add(HierarchicalItem.bookList[j + i * 3]);
+                        row.Add(HierarchicalItem.bookList[j + i * keysPerLine]);
                     }
                     else
                     {
